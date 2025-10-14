@@ -4,8 +4,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     margin: 0;
     color: #1a1a1a;
-    background: url('Fig/fundo-tecnologia.jpg') no-repeat center center fixed;
     background-size: cover;
+    padding-top: 90px;
 }
 
 h1 {
@@ -213,4 +213,5 @@ li {
 
 .slide-card:nth-child(3).visible {
     animation-delay: 0.5s;
+
 }
