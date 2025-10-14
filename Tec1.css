@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    margin: 0;
+    color: #1a1a1a;
+    background: url('Fig/fundo-tecnologia.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1 {
+    background-color: rgba(240, 248, 255, 0.85);
+    color: #003366;
+    text-align: center;
+    padding: 25px 0;
+    margin: 0;
+    font-size: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 img {
+    height: 60px;
+    vertical-align: middle;
+    margin: 0 15px;
+}
+
+h1 p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+h1 a {
+    color: #0047b3;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+h1 a:hover {
+    color: #001f5c;
+    text-decoration: underline;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px 25px;
+    max-width: 500px;
+    flex: 1 1 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: #003366;
+    border-left: 4px solid #0077ff;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+ul {
+    margin: 10px 0 0 20px;
+    list-style-type: square;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 768px) {
+    h1 img {
+        display: block;
+        margin: 10px auto;
+    }
+
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+.integrantes-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+    justify-items: center;
+}
+
+.integrante-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 15px 20px;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.integrante-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.integrante-card strong {
+    color: #003366;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 1000px) {
+    .integrantes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .integrantes-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.integrante-card {
+    position: relative;
+    /* necessário para o link ocupar a caixa */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 15px 20px;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* efeito de hover */
+.integrante-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(230, 240, 255, 0.95);
+}
+
+/* link invisível que cobre toda a box */
+.link-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+/* ======== Animação: da direita para a esquerda ======== */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ======== Estado inicial: invisível ======== */
+.slide-card {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ======== Quando o card entra na tela ======== */
+.slide-card.visible {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+/* ======== Delay progressivo (opcional) ======== */
+.slide-card:nth-child(1).visible {
+    animation-delay: 0.1s;
+}
+
+.slide-card:nth-child(2).visible {
+    animation-delay: 0.3s;
+}
+
+.slide-card:nth-child(3).visible {
+    animation-delay: 0.5s;
+}
