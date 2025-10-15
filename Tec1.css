@@ -4,6 +4,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     margin: 0;
     color: #1a1a1a;
+    background: url('Fig/fundo-tecnologia.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -100,6 +101,25 @@ li {
 
     .card {
         width: 90%;
+        max-width: 500px;
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .card p {
+        text-align: justify;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .card h2, .card h3 {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    body {
+        padding-top: 100px;
     }
 }
 
@@ -146,7 +166,6 @@ li {
 
 .integrante-card {
     position: relative;
-    /* necessário para o link ocupar a caixa */
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     padding: 15px 20px;
@@ -157,14 +176,12 @@ li {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* efeito de hover */
 .integrante-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     background-color: rgba(230, 240, 255, 0.95);
 }
 
-/* link invisível que cobre toda a box */
 .link-box {
     position: absolute;
     top: 0;
@@ -176,6 +193,7 @@ li {
     color: inherit;
     cursor: pointer;
 }
+
 /* ======== Animação: da direita para a esquerda ======== */
 @keyframes slideInRight {
     from {
@@ -212,5 +230,4 @@ li {
 
 .slide-card:nth-child(3).visible {
     animation-delay: 0.5s;
-
 }
